@@ -28,8 +28,9 @@ public class RateBasedBillingRecordController {
 	public RateBasedBillingRecord create(@RequestBody RateBasedBillingRecord rateBasedBillingRecord, int companyId) {
 		Company company = companyRepo.getOne(companyId);
 		rateBasedBillingRecord.setCompany(company);
+		rateBasedBillingRecord = billingRecordRepo.save(rateBasedBillingRecord);
 		// TODO Auto-generated method stub
-		return billingRecordRepo.save(rateBasedBillingRecord);
+		return rateBasedBillingRecord;
 	}
 
 }
