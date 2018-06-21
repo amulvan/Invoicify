@@ -2,17 +2,48 @@ package com.el.ally.invoicify.models;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="BillingRecord")
 public abstract class BillingRecord {
-	int id;
-	Date createdOn;
-	String description;
-	InvoiceLineItem lineItem;
-	Company company;
 	
+	// constructor
+	public BillingRecord() {
+		
+	}
+
+	@Id
+	@GeneratedValue(generator = "billingrecord_seq_id", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name="billingrecord_seq_id", sequenceName="billingrecord_seq_id")
+	@Column()
+	private int id;
+	
+	@Column()
+	private Date createdOn;
+	
+	@Column()
+	private String description;
+	
+	@OneToOne(mappedBy="billingRecord")
+	private InvoiceLineItem lineItem;
+	
+	@ManyToOne
+	private Company company;
+	
+	// get total
 	public double getTotal() {
 		return -1;
 	}
-
+	/// getters and setters
 	public int getId() {
 		return id;
 	}

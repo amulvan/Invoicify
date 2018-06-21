@@ -1,8 +1,25 @@
 package com.el.ally.invoicify.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="rateBasedBillingRecord")
 public class RateBasedBillingRecord extends BillingRecord {
-	double rate;
-	double quantity;
+	
+	// constructor
+	public RateBasedBillingRecord() {
+		
+	}
+	
+	@Column()
+	private double rate;
+	
+	@Column()
+	private double quantity;
+	
+	// get total methods / math for quantity
 	
 	public double getTotal() {
 		return rate*quantity;
