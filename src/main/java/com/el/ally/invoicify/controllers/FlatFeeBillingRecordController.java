@@ -16,16 +16,11 @@ public class FlatFeeBillingRecordController {
 	@Autowired
 	private BillingRecordRepository billingRecordRepository;
 	
-@PostMapping("")
-public FlatFeeBillingRecord create (@RequestBody FlatFeeBillingRecord flatFee) {
+	@PostMapping("")
+	public FlatFeeBillingRecord create (@RequestBody FlatFeeBillingRecord flatFee) {
 		FlatFeeBillingRecord newRecord = billingRecordRepository.save(flatFee);
 		 return newRecord;
-	    }
-	
-	public FlatFeeBillingRecord create() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+}
 	
 	
 }

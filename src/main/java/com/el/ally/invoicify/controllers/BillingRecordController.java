@@ -41,7 +41,6 @@ public class BillingRecordController {
 	public BillingRecord getOne(@PathVariable int i) {
 		BillingRecord billingRecord = (BillingRecord) billingRepository.findOne(i);
 		return billingRecord; 
-		
 	}
 
 
