@@ -19,11 +19,10 @@ public class FlatFeeBillingRecordControllerTest {
 	public void createMethod_createFlatFeeBillingRecord_returnRecord() {
 		//Arrange
 		FlatFeeBillingRecordController flatFeeController = new FlatFeeBillingRecordController();
-		FlatFeeBillingRecord flatFeeRecord = new FlatFeeBillingRecord();
 		FlatFeeBillingRecord expected = new FlatFeeBillingRecord();
 		
 		//Act
-		FlatFeeBillingRecord actual = flatFeeController.create(flatFeeRecord);
+		FlatFeeBillingRecord actual = flatFeeController.create();
 		//assert
 		Assert.assertEquals(expected, actual);
 		

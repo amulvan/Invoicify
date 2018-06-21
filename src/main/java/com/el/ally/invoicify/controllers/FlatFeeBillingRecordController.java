@@ -4,9 +4,9 @@ import com.el.ally.invoicify.models.FlatFeeBillingRecord;
 
 public class FlatFeeBillingRecordController {
 	
-	public FlatFeeBillingRecord create(FlatFeeBillingRecord flatFeeBillingRecord) {
+	public FlatFeeBillingRecord create() {
 		// TODO Auto-generated method stub
-		return flatFeeBillingRecord;
+		return null;
 	}
 
 }
