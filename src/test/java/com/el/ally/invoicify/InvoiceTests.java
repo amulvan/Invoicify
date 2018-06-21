@@ -25,7 +25,7 @@ public class InvoiceTests {
 	    @Before
 	    public void setUp() {
 	        MockitoAnnotations.initMocks(this);
-	        controller = new InvoiceController(invoiceRepo);
+	        InvoiceController controller = new InvoiceController();
 	    }
 
 	    @Test
