@@ -43,6 +43,13 @@ public class Invoice {
 	
 	
 	
+	public Invoice(Company company, Date createdOn, String invoiceDescription, List<InvoiceLineItem> lineItems) {
+		super();
+		this.company = company;
+		this.createdOn = createdOn;
+		this.invoiceDescription = invoiceDescription;
+		this.lineItems = lineItems;
+	}
 	// getters and setters
 	public int getId() {
 		return id;
