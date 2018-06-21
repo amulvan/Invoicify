@@ -9,4 +9,36 @@ public class Invoice {
 	Date createdOn;
 	String invoiceDescription;
 	List<InvoiceLineItem> lineItems;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+	public String getInvoiceDescription() {
+		return invoiceDescription;
+	}
+	public void setInvoiceDescription(String invoiceDescription) {
+		this.invoiceDescription = invoiceDescription;
+	}
+	public List<InvoiceLineItem> getLineItems() {
+		return lineItems;
+	}
+	public void setLineItems(List<InvoiceLineItem> lineItems) {
+		this.lineItems = lineItems;
+	}
+	
+	
 }
