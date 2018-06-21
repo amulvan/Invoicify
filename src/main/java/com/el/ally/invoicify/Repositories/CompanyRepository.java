@@ -7,6 +7,8 @@ import com.el.ally.invoicify.models.Company;
 
 public interface CompanyRepository extends JpaRepository<Company, Integer> {
 
+	Company findOne(long clientId);
+
 }
 
 
