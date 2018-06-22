@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
 @Entity
 @Table(name="BillingRecord")
 public abstract class BillingRecord {
@@ -38,6 +40,9 @@ public abstract class BillingRecord {
 	
 	@ManyToOne
 	private Company company;
+	
+	@ManyToOne
+	private User createdBy;
 	
 	// get total
 	public double getTotal() {
@@ -82,6 +87,12 @@ public abstract class BillingRecord {
 
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+	public User getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
 	}
 	
 	
