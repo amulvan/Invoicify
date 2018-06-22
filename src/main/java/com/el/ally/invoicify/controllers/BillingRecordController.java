@@ -14,7 +14,7 @@ import com.el.ally.invoicify.Repositories.BillingRecordRepository;
 import com.el.ally.invoicify.models.BillingRecord;
 
 @RestController
-@RequestMapping("/controllers/billing-record")
+@RequestMapping("/api/billing-record")
 public class BillingRecordController {
 	
 	@Autowired

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.el.ally.invoicify.Repositories.CompanyRepository;
 import com.el.ally.invoicify.models.Company;
 @RestController
-@RequestMapping("controllers")
+@RequestMapping("api/company")
 public class CompanyController {
 
 	CompanyRepository companyRepo;

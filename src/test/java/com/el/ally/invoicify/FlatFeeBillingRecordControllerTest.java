@@ -5,6 +5,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
+import org.springframework.security.core.Authentication;
 
 import com.el.ally.invoicify.Repositories.BillingRecordRepository;
 import com.el.ally.invoicify.Repositories.CompanyRepository;
@@ -24,13 +25,14 @@ public class FlatFeeBillingRecordControllerTest {
 		//Arrange
 				BillingRecordRepository billingRecords = mock(BillingRecordRepository.class);
 				CompanyRepository companies = mock(CompanyRepository.class);
+				Authentication auth = mock(Authentication.class);
 				FlatFeeBillingRecord record = new FlatFeeBillingRecord();
 				Company company = new Company();
 				when(companies.findOne(1)).thenReturn(company);
 				when(billingRecords.save(record)).thenReturn(record);
 				FlatFeeBillingRecordController controller = new FlatFeeBillingRecordController(billingRecords, companies);
 				//Act
-				FlatFeeBillingRecord actual = controller.create(record, 1);
+				FlatFeeBillingRecord actual = controller.create(record, 1, auth);
 				record.setCompany(company);
 				FlatFeeBillingRecord expected = record;
 				

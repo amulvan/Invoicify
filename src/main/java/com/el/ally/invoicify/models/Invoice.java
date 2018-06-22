@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import com.el.ally.invoicify.models.User;
 
 @Entity
 @Table(name="invoice")

@@ -8,7 +8,7 @@ import com.el.ally.invoicify.models.Invoice;
 
 public interface InvoiceRepository extends JpaRepository<Invoice, Integer> {
 
-	Invoice findOne(long l);
+	Invoice findOne(int l);
 
 
 

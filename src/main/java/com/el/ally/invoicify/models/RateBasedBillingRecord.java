@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rateBasedBillingRecord")
 public class RateBasedBillingRecord extends BillingRecord {
 	
 	// constructor

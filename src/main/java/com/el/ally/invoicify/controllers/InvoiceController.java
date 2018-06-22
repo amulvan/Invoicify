@@ -49,7 +49,7 @@ public class InvoiceController {
 		}
 	 
 	 @PostMapping("{clientId}")
-		public Invoice createInvoice(@RequestBody InvoiceView invoiceView, @PathVariable long clientId) {
+		public Invoice createInvoice(@RequestBody InvoiceView invoiceView, @PathVariable int clientId) {
 			List<BillingRecord> records = recordRepository.findByIdIn(invoiceView.getRecordIds());
 			long nowish = Calendar.getInstance().getTimeInMillis();
 			Date now = new Date(nowish);

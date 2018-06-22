@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import com.el.ally.invoicify.models.User;
 
 @Entity
 @Table(name="BillingRecord")
@@ -91,8 +91,8 @@ public abstract class BillingRecord {
 	public User getCreatedBy() {
 		return createdBy;
 	}
-	public void setCreatedBy(User createdBy) {
-		this.createdBy = createdBy;
+	public void setCreatedBy(User user) {
+		this.createdBy = user;
 	}
 	
 	
