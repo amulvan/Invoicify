@@ -31,17 +31,14 @@ public class InvoiceController {
 
 	
 
-	@Autowired
 	private InvoiceRepository invoiceRepository;
-	
-	@Autowired
 	private BillingRecordRepository recordRepository;
-	
-	@Autowired
 	private CompanyRepository companyRepository;
-
-	public InvoiceController() {
-
+	
+	public InvoiceController(InvoiceRepository invoiceRepository, BillingRecordRepository recordRepository, CompanyRepository companyRepository) {
+		this.invoiceRepository = invoiceRepository;
+		this.recordRepository = recordRepository;
+		this.companyRepository = companyRepository;
 	}
 	 
 	 
@@ -74,4 +71,6 @@ public class InvoiceController {
 			return invoiceRepository.save(invoice);
 		}
 
+	 
+	 
 }
