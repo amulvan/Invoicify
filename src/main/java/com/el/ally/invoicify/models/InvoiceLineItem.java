@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
 @Entity
 @Table(name="invoicelineitem")
 public class InvoiceLineItem {
@@ -35,6 +37,8 @@ public class InvoiceLineItem {
 	@ManyToOne
 	Invoice invoice;
 	
+	@ManyToOne
+	private User createdBy;
 	
 	// getters and setters
 	public int getId() {
@@ -60,6 +64,12 @@ public class InvoiceLineItem {
 	}
 	public void setInvoice(Invoice invoice) {
 		this.invoice = invoice;
+	}
+	public User getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
 	}
 	
 	
