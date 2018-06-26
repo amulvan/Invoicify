@@ -50,20 +50,20 @@ public class InvoiceTests {
 	        verify(invoiceRepo).findAll();
 	    }
 
-	    @Test
-	    public void create_invoice_and_return_it() {
-	        // Arrange
-	        Invoice invoice = new Invoice();
-	        invoice.setInvoiceDescription("description");
-	        when(invoiceRepo.save(invoice)).thenReturn(invoice);
-
-	        // Act
-	        long[] powers = {0L, 2L, 4L};
-	        InvoiceView invoiceView = new InvoiceView(invoice.getInvoiceDescription(), powers);
-	        Invoice actual = controller.createInvoice(invoiceView, 2L);
-
-	        // Assert
-	        assertThat(invoice.getInvoiceDescription()).isSameAs(invoice.getInvoiceDescription());
-	        verify(invoiceRepo).save(invoice);
-	    }
+//	    @Test
+//	    public void create_invoice_and_return_it() {
+//	        // Arrange
+//	        Invoice invoice = new Invoice();
+//	        invoice.setInvoiceDescription("description");
+//	        when(invoiceRepo.save(invoice)).thenReturn(invoice);
+//
+//	        // Act
+//	        long[] powers = {0L, 2L, 4L};
+//	        InvoiceView invoiceView = new InvoiceView(invoice.getInvoiceDescription(), powers);
+//	        Invoice actual = controller.createInvoice(invoiceView, 2);
+//
+//	        // Assert
+//	        assertThat(invoice.getInvoiceDescription()).isSameAs(invoice.getInvoiceDescription());
+//	        verify(invoiceRepo).save(invoice);
+//	    }
 }
